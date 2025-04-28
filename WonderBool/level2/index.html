@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Potions - A Harry Potter Coding Adventure</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts (Optional - for a magical feel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-hat-wizard"></i> Code Potions <i class="fas fa-flask-vial"></i></h1>
+        <p>Learn coding spells to brew magical potions!</p>
+    </header>
+
+    <main class="container">
+        <div class="challenge-description">
+            <h2 id="challenge-title">Welcome, Young Wizard!</h2>
+            <p id="challenge-instructions">Select a potion recipe (challenge) below to begin your training.</p>
+            <div id="challenge-details">
+                <h3>Goal:</h3>
+                <p id="challenge-goal"></p>
+                <h3>Expected Output:</h3>
+                <pre id="challenge-expected-output"></pre>
+                <h3>Available Spells:</h3>
+                <ul id="challenge-spells"></ul>
+            </div>
+        </div>
+
+        <div class="level-selector">
+            <h3>Potion Recipes (Challenges)</h3>
+            <div id="level-buttons"></div>
+            <p class="progress-info">Completed: <span id="completed-count">0</span> / <span id="total-count">0</span></p>
+            <button id="reset-progress-btn"><i class="fas fa-undo"></i> Reset Progress</button>
+        </div>
+
+        <div class="coding-area">
+            <h2><i class="fas fa-wand-magic-sparkles"></i> Cast Your Spell (Write Code)</h2>
+            <textarea id="user-code" placeholder="Enter your spell code here..."></textarea>
+            <button id="cast-spell-btn"><i class="fas fa-paper-plane"></i> Cast Spell!</button>
+        </div>
+
+        <div class="output-area">
+            <h2><i class="fas fa-cauldron"></i> Potion Result</h2>
+            <pre id="output"></pre>
+            <div id="feedback"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created for aspiring wizards by Bool AI</p>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

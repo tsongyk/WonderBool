@@ -1,0 +1,124 @@
+:root {
+  --bg-color: #f5eeda; /* Parchment */
+  --text-color: #3a2a1a; /* Dark Brown */
+  --header-bg: #4a0e4e; /* Deep Purple */
+  --header-text: #ffd700; /* Gold */
+  --accent-color-1: #008080; /* Teal */
+  --accent-color-2: #740001; /* Gryffindor Red */
+  --button-bg: #ffd700; /* Gold */
+  --button-text: #3a2a1a;
+  --output-bg: #e0d8c4;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --font-main: 'MedievalSharp', sans-serif;
+  --font-heading: 'MedievalSharp', cursive;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+}
+
+.subtitle {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 150px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  grid-template-rows: repeat(5, 80px);
+  gap: 4px;
+  margin: 10px auto;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.player {
+  background-color: #f97316;
+  color: white;
+}
+
+.goal {
+  background-color: #22c55e;
+  color: white;
+}
+
+.obstacle {
+  background-color: #64748b;
+}
+
+#blocklyDiv {
+  height: 425px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+}
+
+.controls {
+  margin-top: 30px;
+  margin-left: 140px;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.run {
+  background-color: #fde047;
+}
+
+.reset {
+  background-color: #f87171;
+  color: white;
+}

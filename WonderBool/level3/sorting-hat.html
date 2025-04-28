@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Hat Challenge - WW DSA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="color: var(--gold); text-decoration: none;"><i class="fas fa-arrow-left"></i> Sorting Hat Challenge <i class="fas fa-sort"></i></a></h1>
+    </header>
+
+    <main class="lesson-container">
+        <section class="controls-section">
+            <h2>Sorting Controls</h2>
+            <label for="algorithm-select">Choose Sorting Spell:</label>
+            <select id="algorithm-select">
+                <option value="bubble">Bubble Sort (Simplificus Sortitus)</option>
+                <option value="insertion">Insertion Sort (Insertio Ordino)</option>
+                <option value="selection">Selection Sort (Selecto Minimus)</option>
+                <option value="merge">Merge Sort (Conjunctio Divisio)</option> <!-- Added Merge Sort -->
+            </select>
+
+            <label for="speed-slider">Animation Speed:</label>
+            <input type="range" id="speed-slider" min="1" max="100" value="50">
+
+            <button id="generate-btn"><i class="fas fa-random"></i> Generate New Students</button>
+            <button id="sort-btn"><i class="fas fa-wand-magic-sparkles"></i> Cast Sorting Spell!</button>
+        </section>
+
+        <section class="visualization-section">
+            <h2>Student Lineup (by Aptitude)</h2>
+            <div id="canvas-container" class="visualization-area">
+                <!-- p5.js canvas will be inserted here -->
+            </div>
+        </section>
+
+        <section class="explanation-section">
+            <h3 id="explanation-title">Algorithm Explanation</h3>
+            <p id="explanation-text">Select a sorting spell (algorithm) and click 'Cast Sorting Spell!' to see how it works. Student aptitude is represented by the height of the bars.</p>
+            <p><strong>Complexity:</strong> <code id="explanation-complexity">N/A</code></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bool AI Wizarding Academy.</p>
+    </footer>
+
+    <script src="sorting-hat.js"></script>
+</body>
+</html>

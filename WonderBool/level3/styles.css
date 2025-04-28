@@ -1,0 +1,401 @@
+/* Global Styles */
+:root {
+  --parchment: #F5EBCD;
+  --maroon: #800000;
+  --gold: #FFD700;
+  --dark-brown: #4B3621;
+  --gryffindor-red: #AE0001;
+  --gryffindor-gold: #EEBA30;
+  --slytherin-green: #2A623D;
+  --slytherin-silver: #AAAAAA;
+  --hufflepuff-yellow: #FFDB00;
+  --hufflepuff-black: #372e29; /* Darker than pure black */
+  --ravenclaw-blue: #0E1A40;
+  --ravenclaw-bronze: #946B2D;
+
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--parchment);
+  color: var(--dark-brown);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--maroon);
+  color: var(--gold);
+  padding: 1rem 0;
+  text-align: center;
+  font-family: var(--font-heading);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+footer {
+  background-color: var(--maroon);
+  color: var(--parchment);
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  margin-top: auto; /* Pushes footer to bottom */
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--maroon);
+}
+
+a {
+  color: var(--ravenclaw-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  border: 1px solid var(--dark-brown);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 3px 3px 5px rgba(75, 54, 33, 0.2);
+}
+
+/* Main Menu Specific */
+.main-menu {
+  text-align: center;
+}
+
+.intro-card h2 {
+  margin-top: 0;
+}
+
+.lesson-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.lesson-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 250px; /* Fixed width for consistency */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.lesson-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 10px rgba(75, 54, 33, 0.3);
+  text-decoration: none;
+}
+
+.lesson-link i {
+  margin-bottom: 1rem;
+}
+
+.lesson-link h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-link p {
+  font-size: 0.9rem;
+  flex-grow: 1; /* Helps align content if text length varies */
+}
+
+/* House Colors for Links */
+.gryffindor {
+  border-color: var(--gryffindor-red);
+}
+.gryffindor i, .gryffindor h3 { color: var(--gryffindor-red); }
+
+.ravenclaw {
+  border-color: var(--ravenclaw-blue);
+}
+.ravenclaw i, .ravenclaw h3 { color: var(--ravenclaw-blue); }
+
+.hufflepuff {
+  border-color: var(--hufflepuff-yellow);
+}
+.hufflepuff i, .hufflepuff h3 { color: var(--hufflepuff-black); }
+
+.slytherin {
+  border-color: var(--slytherin-green);
+}
+.slytherin i, .slytherin h3 { color: var(--slytherin-green); }
+
+
+/* Lesson Pages Specific */
+.lesson-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controls-section, .visualization-section, .explanation-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--dark-brown);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 3px 3px 5px rgba(75, 54, 33, 0.2);
+}
+
+.controls-section label,
+.controls-section select,
+.controls-section button,
+.controls-section input {
+  margin-right: 10px;
+  margin-bottom: 10px; /* Add spacing for wrapped items */
+  padding: 8px 12px;
+  font-family: var(--font-body);
+  border: 1px solid var(--dark-brown);
+  border-radius: 4px;
+}
+
+.controls-section button {
+  background-color: var(--maroon);
+  color: var(--gold);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.controls-section button:hover {
+  background-color: var(--gold);
+  color: var(--maroon);
+}
+
+.controls-section button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.visualization-area {
+  min-height: 300px; /* Ensure space for canvas */
+  border: 1px dashed var(--slytherin-silver);
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  position: relative; /* For p5 canvas positioning */
+}
+
+.explanation-section h3 {
+  margin-top: 0;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.5rem;
+}
+
+.explanation-section code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+
+/* O.W.L. Exam Specific Styles */
+#quiz-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border: 1px solid var(--dark-brown);
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(75, 54, 33, 0.2);
+}
+
+#question-area {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gold);
+}
+
+#question-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--maroon);
+}
+
+#answers-area ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#answers-area li {
+  margin-bottom: 0.8rem;
+}
+
+#answers-area button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  background-color: white;
+  border: 2px solid var(--ravenclaw-blue);
+  border-radius: 5px;
+  color: var(--ravenclaw-blue);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#answers-area button:hover:not(:disabled) {
+  background-color: var(--ravenclaw-blue);
+  color: white;
+}
+
+#answers-area button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#answers-area button.correct {
+  background-color: #4CAF50; /* Green */
+  border-color: #388E3C;
+  color: white;
+}
+
+#answers-area button.incorrect {
+  background-color: #f44336; /* Red */
+  border-color: #d32f2f;
+  color: white;
+}
+
+
+#feedback-area {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  min-height: 40px; /* Ensure space even when empty */
+  font-weight: bold;
+}
+
+#feedback-area.correct {
+  background-color: #dff0d8; /* Light green */
+  color: #3c763d; /* Dark green */
+  border: 1px solid #d6e9c6;
+}
+
+#feedback-area.incorrect {
+  background-color: #f2dede; /* Light red */
+  color: #a94442; /* Dark red */
+  border: 1px solid #ebccd1;
+}
+
+#navigation-area {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+#navigation-area button {
+  background-color: var(--maroon);
+  color: var(--gold);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin: 0 10px;
+}
+
+#navigation-area button:hover {
+  background-color: var(--gold);
+  color: var(--maroon);
+}
+
+#results-area {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 1.5rem;
+  }
+
+  main {
+      width: 95%;
+      padding: 1rem;
+  }
+
+  .lesson-nav {
+      flex-direction: column; /* Stack links vertically */
+      align-items: center;
+  }
+
+  .lesson-link {
+      width: 80%; /* Make links wider on smaller screens */
+      max-width: 300px;
+  }
+
+  .controls-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .controls-section label,
+  .controls-section select,
+  .controls-section button,
+  .controls-section input {
+      margin-right: 0;
+      width: calc(100% - 24px); /* Full width minus padding */
+      box-sizing: border-box;
+  }
+
+  .visualization-area {
+      min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+      font-size: 1.2rem;
+  }
+  
+  .lesson-link {
+      width: 90%;
+  }
+
+  .visualization-area {
+      min-height: 200px;
+  }
+}

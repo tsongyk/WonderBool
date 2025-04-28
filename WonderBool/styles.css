@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Nunito:wght@400;700&display=swap'); /* Added MedievalSharp */
+
+:root {
+    --primary-color: #483D8B; /* DarkSlateBlue */
+    --secondary-color: #FFD700; /* Gold */
+    --accent-color: #2E8B57; /* SeaGreen */
+    --background-color: #F5F5DC; /* Beige (Parchment) */
+    --text-color: #5D4037; /* Dark Brown */
+    --white: #fff;
+    --success-color: #98FB98; /* PaleGreen */
+    --error-color: #CD5C5C; /* IndianRed */
+    --border-radius: 6px; /* Slightly sharper edges */
+}
+
+body {
+    font-family: 'Nunito', sans-serif; /* Keep Nunito for readability */
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header h1 i {
+    margin: 0 0.5rem;
+    color: var(--secondary-color);
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+}
+
+main {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+#level-selection h2, #game-area h2 {
+    text-align: center;
+    color: var(--primary-color); /* Use primary (purple) for headings */
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.level-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger buttons */
+    gap: 1.5rem;
+}
+
+.level-btn {
+    background-color: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; /* Added border-color transition */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.level-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Enhanced shadow */
+    border-color: var(--secondary-color); /* Gold border on hover */
+}
+
+.level-btn i {
+    font-size: 2.8rem; /* Larger icons */
+    color: var(--accent-color); /* Green icons */
+    margin-bottom: 0.7rem;
+}
+
+.level-btn span {
+    font-size: 1.3rem; /* Larger title */
+    font-weight: bold;
+    color: var(--primary-color); /* Purple title */
+    font-family: 'MedievalSharp', cursive; /* Thematic font */
+    margin-bottom: 0.4rem;
+}
+
+.level-btn small {
+    font-size: 0.9rem;
+    color: #776B5D; /* Darker beige/brown for subtitle */
+    margin-bottom: 0.6rem;
+    font-style: italic;
+}
+
+.level-btn p {
+    font-size: 0.9rem;
+    color: var(--text-color); /* Brown text */
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.4; /* Improve readability */
+}
+
+.hidden {
+    display: none;
+}
+
+#game-area {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+    background-color: var(--accent-color); /* Green back button */
+    color: var(--white);
+    border: 1px solid darken(var(--accent-color), 10%); /* Darker green border */
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.back-btn:hover {
+    background-color: #25754b; /* Darker SeaGreen */
+}
+
+#message-area {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: bold;
+}
+
+.message-success {
+    background-color: var(--success-color); /* PaleGreen */
+    color: #004d00; /* Dark Green text */
+    border: 1px solid #5cb85c;
+}
+
+.message-error {
+    background-color: var(--error-color); /* IndianRed */
+    color: #6b1111; /* Dark Red text */
+    border: 1px solid #d9534f;
+}
+
+footer {
+    background-color: var(--primary-color); /* Purple footer */
+    color: var(--background-color); /* Parchment text */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* --- Game Specific Styles --- */
+
+/* Level 1: Sequences/Algorithms */
+.step-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 2px dashed var(--primary-color); /* Purple dashed border */
+    min-height: 100px;
+    background-color: #E8E4C9; /* Lighter parchment */
+    border-radius: var(--border-radius);
+}
+
+.step-item { /* Style like a small scroll or label */
+    background-color: var(--accent-color); /* Green background */
+    color: var(--white);
+    padding: 0.6rem 1rem; /* Smaller padding */
+    border-radius: 4px; /* Sharper corners */
+    cursor: grab;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    border: 1px solid darken(var(--accent-color), 10%);
+    font-size: 0.9rem;
+}
+
+.step-item:active {
+    cursor: grabbing;
+}
+
+.drop-area { /* Style like a cauldron or mixing area */
+    border: 3px double var(--secondary-color); /* Gold double border */
+    padding: 1.5rem;
+    min-height: 120px;
+    margin-bottom: 1rem;
+    background-color: #D2B48C; /* Tan background */
+    border-radius: 10px 10px 50% 50% / 10px 10px 20px 20px; /* Subtle cauldron shape? */
+}
+
+.drop-area .step-item {
+    margin: 0.5rem;
+    display: inline-block; /* Or flex */
+}
+
+.check-btn {
+    background-color: var(--primary-color); /* Purple check button */
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border: 1px solid darken(var(--primary-color), 10%);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+    font-family: 'MedievalSharp', cursive; /* Thematic font */
+}
+
+.check-btn:hover {
+    background-color: #3A306F; /* Darker purple */
+}
+
+/* Level 2: Spellcasting */
+.code-task {
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.code-controls button {
+    background-color: var(--accent-color); /* Green buttons */
+    color: var(--white);
+    border: 1px solid darken(var(--accent-color), 10%);
+    padding: 0.6rem 1rem;
+    margin: 0.3rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.code-controls button:hover {
+    background-color: #25754b; /* Darker green */
+}
+
+.code-output { /* Style like a crystal ball or scroll */
+    background-color: #1e1e1e; /* Dark background */
+    color: var(--secondary-color); /* Gold text */
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1.2rem;
+    border-radius: 50%; /* Make it round? Or keep rectangular */
+    border: 3px inset var(--primary-color); /* Inset purple border */
+    min-height: 100px;
+    margin-top: 1rem;
+    white-space: pre-wrap; /* Keep formatting */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Level 3: Magical Artifacts & Arcane Structures */
+.visualization-area {
+    border: 2px solid var(--primary-color); /* Purple border */
+    padding: 1rem;
+    min-height: 250px;
+    margin-top: 1rem;
+    position: relative; /* Needed for absolute positioning of nodes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap; /* For sorting */
+}
+
+.data-node, .sort-bar {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 50%; /* Circle for nodes */
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid darken(var(--secondary-color), 15%); /* Darker gold border */
+}
+
+.sort-bar { /* Style like potion vials or crystals */
+    border-radius: 3px 3px 0 0; /* Flat bottom, slightly rounded top */
+    padding: 0;
+    margin: 2px;
+    background-color: var(--accent-color); /* Green bars */
+    height: 50px; /* Base height */
+    width: 22px;
+    align-self: flex-end; /* Align bars to bottom */
+    transition: height 0.3s ease, background-color 0.3s ease;
+    border: 1px solid darken(var(--accent-color), 10%);
+    box-shadow: inset 1px 1px 3px rgba(255,255,255,0.3), inset -1px -1px 3px rgba(0,0,0,0.2); /* Add subtle 3D effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    .level-buttons {
+        grid-template-columns: 1fr; /* Stack buttons on smaller screens */
+    }
+
+    .level-btn {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    #game-area {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+    .back-btn, .check-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

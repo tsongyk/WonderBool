@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O.W.L. Exam - WW DSA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="color: var(--gold); text-decoration: none;"><i class="fas fa-arrow-left"></i> Ordinary Wizarding Level Exam <i class="fas fa-scroll"></i></a></h1>
+    </header>
+
+    <main>
+        <div id="quiz-container">
+            <div id="question-area">
+                <p id="question-number"></p>
+                <p id="question-text"></p>
+            </div>
+
+            <div id="answers-area">
+                <ul id="answer-list">
+                    <!-- Answer buttons will be generated here by JS -->
+                </ul>
+            </div>
+
+            <div id="feedback-area">
+                <!-- Feedback will be shown here -->
+            </div>
+
+            <div id="navigation-area">
+                <button id="next-btn" style="display: none;">Next Question <i class="fas fa-arrow-right"></i></button>
+                <button id="results-btn" style="display: none;">Show Results <i class="fas fa-award"></i></button>
+                <button id="restart-btn" style="display: none;">Restart Exam <i class="fas fa-redo"></i></button>
+            </div>
+
+             <div id="results-area" style="display: none;">
+                <h2>Exam Results</h2>
+                <p id="score-text"></p>
+                <p id="result-message"></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bool AI Wizarding Academy.</p>
+    </footer>
+
+    <script src="owl-exam.js"></script>
+</body>
+</html>

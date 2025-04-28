@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Potions - A Harry Potter Coding Adventure</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts (Optional - for a magical feel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-hat-wizard"></i> Find the Spellbook <i class="fas fa-book-skull"></i></h1>
+    <p>Reach the spellbook while avoiding the enchanted bookshelves!</p>
+</header>
+  <div class="game-container">
+    <div style="flex: 1;">
+      <div id="blocklyDiv"></div>
+      <xml id="toolbox" style="display: none">
+        <block type="move_up"></block>
+        <block type="move_down"></block>
+        <block type="move_left"></block>
+        <block type="move_right"></block>
+        <block type="controls_repeat_ext">
+          <value name="TIMES">
+            <!-- Shadow block makes the default number appear -->
+            <shadow type="math_number">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+          <statement name="DO">
+            <!-- Blocks inside the loop will connect here -->
+          </statement>
+        </block>
+      </xml>
+      <div class="controls">
+        <button class="run" onclick="runCode()">▶ Run</button>
+        <button class="reset" onclick="resetGame()">↺ Reset</button>
+      </div>
+    </div>
+    <div style="flex: 1;">
+      <div class="grid" id="gameGrid"></div>
+      <p id="positionText">Position: (0, 0)</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

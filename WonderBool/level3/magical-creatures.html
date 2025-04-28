@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Creature Classification - WW DSA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="color: var(--gold); text-decoration: none;"><i class="fas fa-arrow-left"></i> Magical Creature Classification <i class="fas fa-tree"></i></a></h1>
+    </header>
+
+    <main class="lesson-container">
+        <section class="controls-section">
+            <h2>Creature Management</h2>
+             <label for="tree-type-select">Choose Tree Type:</label>
+             <select id="tree-type-select">
+                 <option value="bst" selected>Binary Search Tree (BST)</option>
+                 <option value="avl">AVL Tree (Balanced BST)</option>
+             </select>
+             <br><br> <!-- Simple spacing -->
+            <label for="creature-value">Creature Identifier (e.g., Name or ID):</label>
+            <input type="text" id="creature-value" placeholder="e.g., Niffler or 50">
+            
+            <button id="add-btn"><i class="fas fa-plus"></i> Add Creature</button>
+            <button id="search-btn"><i class="fas fa-magnifying-glass"></i> Search Creature</button>
+             <button id="reset-btn"><i class="fas fa-undo"></i> Reset Tree</button>
+            <p id="status-message" style="margin-top: 10px; font-style: italic;"></p>
+        </section>
+
+        <section class="visualization-section">
+            <h2>Enchanted Classification Tree (BST)</h2>
+            <div id="canvas-container" class="visualization-area">
+                <!-- p5.js canvas will be inserted here -->
+            </div>
+        </section>
+
+        <section class="explanation-section">
+            <h3 id="explanation-title">Binary Search Tree (Arbor Cognitus)</h3>
+            <div id="bst-explanation">
+                 <p>A Binary Search Tree (BST) is a magical data structure where each creature node has at most two children (left and right). Creatures are organized based on their identifier:</p>
+                 <ul>
+                     <li>Identifiers <strong>less than</strong> the parent node go to the <strong>left</strong> child.</li>
+                     <li>Identifiers <strong>greater than</strong> the parent node go to the <strong>right</strong> child.</li>
+                 </ul>
+                 <p>This structure allows for efficient searching and insertion. However, if creatures are added in a specific order (e.g., sorted), the tree can become unbalanced, degrading performance.</p>
+                 <p><strong>Search/Insert Complexity:</strong> Average <code>O(log n)</code>, Worst <code>O(n)</code></p>
+            </div>
+             <div id="avl-explanation" style="display: none;">
+                  <p>An AVL Tree is a self-balancing Binary Search Tree. It maintains the BST property but adds a crucial constraint: the heights of the two child subtrees of any node must differ by at most one. If adding or removing a creature violates this 'balance factor', the tree performs magical rotations (LL, RR, LR, RL) to restore balance.</p>
+                  <p>This balancing act ensures that the tree remains relatively balanced, guaranteeing efficient operations even in the worst case.</p>
+                  <p><strong>Search/Insert Complexity:</strong> <code>O(log n)</code> (Worst-case guaranteed)</p>
+             </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bool AI Wizarding Academy.</p>
+    </footer>
+
+    <script src="magical-creatures.js"></script>
+</body>
+</html>
